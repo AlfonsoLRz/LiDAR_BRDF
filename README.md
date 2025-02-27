@@ -1,2 +1,3 @@
-# LiDARBRDF
-Source code of "Enhancing LiDAR point cloud generation with BRDF-based appearance modelling" (yet to be published).
+# Enhancing LiDAR point cloud generation with BRDF-based appearance modelling
+Source code of "Enhancing LiDAR point cloud generation with BRDF-based appearance modelling". 
+The code will be published soon!
