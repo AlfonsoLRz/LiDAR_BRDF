@@ -47,8 +47,6 @@
     <ClInclude Include="Source\Graphics\Application\LiDARParameters.h" />
     <ClInclude Include="Source\Graphics\Application\MaterialList.h" />
     <ClInclude Include="Source\Graphics\Application\PointCloudParameters.h" />
-    <ClInclude Include="Source\Graphics\Application\TerrainConfiguration.h" />
-    <ClInclude Include="Source\Graphics\Application\TerrainParameters.h" />
     <ClInclude Include="Source\Graphics\Core\BRDFDatabase.h" />
     <ClInclude Include="Source\Graphics\Core\DrawPath.h" />
     <ClInclude Include="Source\Graphics\Core\MaterialDatabase.h" />
@@ -56,7 +54,6 @@
     <ClInclude Include="Source\Graphics\Application\RenderingParameters.h" />
     <ClInclude Include="Source\Graphics\Application\LiDARScene.h" />
     <ClInclude Include="Source\Graphics\Application\Scene.h" />
-    <ClInclude Include="Source\Graphics\Application\TerrainScene.h" />
     <ClInclude Include="Source\Graphics\Application\TextureList.h" />
     <ClInclude Include="Source\Graphics\Core\AerialEllipticalBuilder.h" />
     <ClInclude Include="Source\Graphics\Core\AerialLinearBuilder.h" />
@@ -74,7 +71,6 @@
     <ClInclude Include="Source\Graphics\Core\DrawRay3D.h" />
     <ClInclude Include="Source\Graphics\Core\FBO.h" />
     <ClInclude Include="Source\Graphics\Core\FBOScreenshot.h" />
-    <ClInclude Include="Source\Graphics\Core\Forest.h" />
     <ClInclude Include="Source\Graphics\Core\GraphicsCoreEnumerations.h" />
     <ClInclude Include="Source\Graphics\Core\Group3D.h" />
     <ClInclude Include="Source\Graphics\Core\Image.h" />
@@ -100,15 +96,10 @@
     <ClInclude Include="Source\Graphics\Core\ShadowMap.h" />
     <ClInclude Include="Source\Graphics\Core\SpotLight.h" />
     <ClInclude Include="Source\Graphics\Core\SSAOFBO.h" />
-    <ClInclude Include="Source\Graphics\Core\Terrain.h" />
-    <ClInclude Include="Source\Graphics\Core\TerrainModel.h" />
     <ClInclude Include="Source\Graphics\Core\TerrestrialSphericalBuilder.h" />
     <ClInclude Include="Source\Graphics\Core\Texture.h" />
     <ClInclude Include="Source\Graphics\Core\VAO.h" />
     <ClInclude Include="Source\Graphics\Core\ImageUtilities.h" />
-    <ClInclude Include="Source\Graphics\Core\Grass.h" />
-    <ClInclude Include="Source\Graphics\Core\Water.h" />
-    <ClInclude Include="Source\Graphics\Core\WaterFBO.h" />
     <ClInclude Include="Libraries\objloader\OBJ_Loader.h" />
     <ClInclude Include="Source\Interface\Fonts\font_awesome.hpp" />
     <ClInclude Include="Source\Interface\Fonts\IconsFontAwesome5.h" />
@@ -153,7 +144,6 @@
     <ClCompile Include="Source\Graphics\Application\Renderer.cpp" />
     <ClCompile Include="Source\Graphics\Application\LiDARScene.cpp" />
     <ClCompile Include="Source\Graphics\Application\Scene.cpp" />
-    <ClCompile Include="Source\Graphics\Application\TerrainScene.cpp" />
     <ClCompile Include="Source\Graphics\Application\TextureList.cpp" />
     <ClCompile Include="Source\Graphics\Core\AerialEllipticalBuilder.cpp" />
     <ClCompile Include="Source\Graphics\Core\AerialLinearBuilder.cpp" />
@@ -169,7 +159,6 @@
     <ClCompile Include="Source\Graphics\Core\DrawRay3D.cpp" />
     <ClCompile Include="Source\Graphics\Core\FBO.cpp" />
     <ClCompile Include="Source\Graphics\Core\FBOScreenshot.cpp" />
-    <ClCompile Include="Source\Graphics\Core\Forest.cpp" />
     <ClCompile Include="Source\Graphics\Core\Group3D.cpp" />
     <ClCompile Include="Source\Graphics\Core\Image.cpp" />
     <ClCompile Include="Source\Graphics\Core\LiDARPointCloud.cpp" />
@@ -192,14 +181,9 @@
     <ClCompile Include="Source\Graphics\Core\ShadowMap.cpp" />
     <ClCompile Include="Source\Graphics\Core\SpotLight.cpp" />
     <ClCompile Include="Source\Graphics\Core\SSAOFBO.cpp" />
-    <ClCompile Include="Source\Graphics\Core\Terrain.cpp" />
-    <ClCompile Include="Source\Graphics\Core\TerrainModel.cpp" />
     <ClCompile Include="Source\Graphics\Core\TerrestrialSphericalBuilder.cpp" />
     <ClCompile Include="Source\Graphics\Core\Texture.cpp" />
     <ClCompile Include="Source\Graphics\Core\VAO.cpp" />
-    <ClCompile Include="Source\Graphics\Core\Grass.cpp" />
-    <ClCompile Include="Source\Graphics\Core\Water.cpp" />
-    <ClCompile Include="Source\Graphics\Core\WaterFBO.cpp" />
     <ClCompile Include="Libraries\objloader\OBJ_Loader.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
@@ -273,18 +257,6 @@
     <None Include="Assets\Shaders\Compute\Templates\modelStructs.glsl" />
     <None Include="Assets\Shaders\Compute\Templates\random.glsl" />
     <None Include="Assets\Shaders\Compute\Templates\rotation.glsl" />
-    <None Include="Assets\Shaders\Compute\Terrain\computeBuildingPosition-comp.glsl" />
-    <None Include="Assets\Shaders\Compute\Terrain\computeNormals-comp.glsl" />
-    <None Include="Assets\Shaders\Compute\Terrain\computeTreeProperties-comp.glsl" />
-    <None Include="Assets\Shaders\Compute\Terrain\generateTreeGeometryTopology-comp.glsl" />
-    <None Include="Assets\Shaders\Compute\Terrain\generateVegetation-comp.glsl" />
-    <None Include="Assets\Shaders\Compute\Terrain\genVegetationMap-comp.glsl" />
-    <None Include="Assets\Shaders\Compute\Terrain\terrainFaces-comp.glsl" />
-    <None Include="Assets\Shaders\Compute\Terrain\terrainGeometryTopology-comp.glsl" />
-    <None Include="Assets\Shaders\Filters\blur-frag.glsl" />
-    <None Include="Assets\Shaders\Filters\blur-vert.glsl" />
-    <None Include="Assets\Shaders\Filters\normalMapShader-frag.glsl" />
-    <None Include="Assets\Shaders\Filters\normalMapShader-vert.glsl" />
     <None Include="Assets\Shaders\Geometry\coneInstance-frag.glsl" />
     <None Include="Assets\Shaders\Geometry\coneInstance-geo.glsl" />
     <None Include="Assets\Shaders\Geometry\coneInstance-vert.glsl" />
@@ -315,8 +287,6 @@
     <None Include="Assets\Shaders\Points\pointCloudScanDirection-vert.glsl" />
     <None Include="Assets\Shaders\Triangles\debugQuad-frag.glsl" />
     <None Include="Assets\Shaders\Triangles\debugQuad-vert.glsl" />
-    <None Include="Assets\Shaders\Triangles\grassTriangleMesh-frag.glsl" />
-    <None Include="Assets\Shaders\Triangles\grassTriangleMesh-vert.glsl" />
     <None Include="Assets\Shaders\Triangles\multiInstanceShadowsShader-frag.glsl" />
     <None Include="Assets\Shaders\Triangles\multiInstanceShadowsShader-vert.glsl" />
     <None Include="Assets\Shaders\Triangles\multiInstanceTriangleMeshGroup-frag.glsl" />
@@ -331,10 +301,6 @@
     <None Include="Assets\Shaders\Triangles\regularGrid-vert.glsl" />
     <None Include="Assets\Shaders\Triangles\shadowsShader-frag.glsl" />
     <None Include="Assets\Shaders\Triangles\shadowsShader-vert.glsl" />
-    <None Include="Assets\Shaders\Triangles\terrainShader-frag.glsl" />
-    <None Include="Assets\Shaders\Triangles\terrainShader-vert.glsl" />
-    <None Include="Assets\Shaders\Triangles\treeTriangleMesh-frag.glsl" />
-    <None Include="Assets\Shaders\Triangles\treeTriangleMesh-vert.glsl" />
     <None Include="Assets\Shaders\Triangles\triangleMesh-frag.glsl" />
     <None Include="Assets\Shaders\Triangles\triangleMesh-vert.glsl" />
     <None Include="Assets\Shaders\Triangles\triangleMeshGroup-frag.glsl" />
@@ -345,8 +311,6 @@
     <None Include="Assets\Shaders\Triangles\triangleMeshPosition-vert.glsl" />
     <None Include="Assets\Shaders\Triangles\uniformTriangleMesh-frag.glsl" />
     <None Include="Assets\Shaders\Triangles\uniformTriangleMesh-vert.glsl" />
-    <None Include="Assets\Shaders\Triangles\waterLake-frag.glsl" />
-    <None Include="Assets\Shaders\Triangles\waterLake-vert.glsl" />
     <None Include="Libraries\bsdf\powitacq.inl" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

@@ -4,8 +4,6 @@
 #include "Geometry/3D/Intersections3D.h"
 #include "Geometry/Animation/CatmullRom.h"
 #include "Graphics/Application/Renderer.h"
-#include "Graphics/Application/TerrainParameters.h"
-#include "Graphics/Application/TerrainScene.h"
 #include "Graphics/Core/AerialEllipticalBuilder.h"
 #include "Graphics/Core/AerialLinearBuilder.h"
 #include "Graphics/Core/AerialZigZagBuilder.h"
@@ -42,8 +40,6 @@ LiDARSimulation::LiDARSimulation(Group3D* scene) :
 	
 	_emptyModelComponent = new Model3D::ModelComponent(nullptr);
 	_pointCloud = new LiDARPointCloud();
-
-	_isForestScene = dynamic_cast<TerrainScene*>(renderer->getCurrentScene()) != nullptr;
 	_scene->registerModelComponent(_emptyModelComponent);
 }
 

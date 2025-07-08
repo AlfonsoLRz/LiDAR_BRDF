@@ -307,8 +307,6 @@ void Model3D::retrieveColorsGPU()
 		if (material)
 		{
 			material->applyTexture(shader, Texture::KAD_TEXTURE);
-			material->applyTexture(shader, Texture::KS_TEXTURE);
-			material->applyTexture(shader, Texture::NS_TEXTURE);
 
 			if (material->applyTexture(shader, Texture::SEMI_TRANSPARENT_TEXTURE))
 			{

@@ -34,7 +34,6 @@ protected:
 	bool							_showALSCanvas;						//!< Shows a window where the user can draw a path
 	bool							_showCameraSettings;
 	bool							_showControls;						//!< Shows application controls
-	bool							_showForestEditor;					//!< Shows an editor where forest scene can be defined
 	bool							_showLidarASPRSClasses;				//!< Shows a window where all ASPRS classes are related to a color
 	bool							_showLidarCustomClasses;			//!< Displays custom classes of the scene
 	bool							_showLiDARExamples;					//!< Displays a window with specifications of several LiDAR models
@@ -221,6 +220,6 @@ public:
 	/**
 	*	@return  
 	*/
-	bool isMouseActive() { return ImGui::GetIO().WantCaptureMouse; }
+	static bool isMouseActive() { return ImGui::GetIO().WantCaptureMouse; }
 };
 

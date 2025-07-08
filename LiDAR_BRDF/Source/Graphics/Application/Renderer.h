@@ -30,7 +30,6 @@ public:
 
 protected:
 	const static std::string SCENE_CONFIGURATION_FILE;
-	const static std::string TERRAIN_STORE_FOLDER;
 
 protected:
 	// [Rendering]

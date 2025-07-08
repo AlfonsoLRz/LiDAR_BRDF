@@ -2,7 +2,6 @@
 #include "Renderer.h"
 
 #include "Graphics/Application/CADScene.h"
-#include "Graphics/Application/TerrainScene.h"
 #include "Interface/Window.h"
 #include "Utilities/FileManagement.h"
 
@@ -10,7 +9,6 @@
 
 const std::string Renderer::SCENE_CONFIGURATION_FILE = "Settings/SceneConfig.txt";
 const std::string Renderer::STR_LINE_COMMENT = "#";
-const std::string Renderer::TERRAIN_STORE_FOLDER = "Settings/Terrain/";
 
 /// [Protected methods]
 
@@ -24,16 +22,6 @@ void Renderer::createScene(const uint8_t sceneType, std::vector<std::string>& ad
 {
 	switch (sceneType)
 	{
-		case CGAppEnum::TERRAIN_SCENE: 
-			if (!additionalInformation.empty())
-			{
-				TerrainScene* scene = new TerrainScene();
-				scene->loadTerrainConfiguration(TERRAIN_STORE_FOLDER + additionalInformation[0]);
-				_scene.reset(scene);
-			}
-
-			break;
-
 		case CGAppEnum::CAD_SCENE: 
 			_scene.reset(new CADScene());
 			if (!additionalInformation.empty())

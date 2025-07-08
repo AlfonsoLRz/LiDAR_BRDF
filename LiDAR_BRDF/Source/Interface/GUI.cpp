@@ -106,12 +106,6 @@ void GUI::createMenu()
 			ImGui::EndMenu();
 		}
 
-		if (ImGui::BeginMenu(ICON_FA_EDIT "Editor"))
-		{
-			ImGui::MenuItem(ICON_FA_TREE "Forest Scene", NULL, &_showForestEditor);
-			ImGui::EndMenu();
-		}
-
 		if (ImGui::BeginMenu(ICON_FA_QUESTION_CIRCLE "Help"))
 		{
 			ImGui::MenuItem(ICON_FA_INFO "About the project", NULL, &_showAboutUs);

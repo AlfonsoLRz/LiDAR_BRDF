@@ -51,8 +51,7 @@ protected:
 
 	// [Scene]
 	Model3D::ModelComponent*		_emptyModelComponent;						//!< Empty model component for outlier values
-	Group3D::StaticGPUData*			_groupGPUData;								//!<
-	bool							_isForestScene;								//!<
+	Group3D::StaticGPUData*			_groupGPUData;								//!<							//!<
 	Group3D*						_scene;										//!<
 
 	// [Rendering]
