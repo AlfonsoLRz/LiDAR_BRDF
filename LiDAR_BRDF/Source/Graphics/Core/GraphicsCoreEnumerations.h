@@ -1,0 +1,197 @@
+#pragma once
+
+/**
+*	@file GraphicsCoreEnumerations.h
+*	@authors Alfonso López Ruiz (alr00048@red.ujaen.es)
+*	@date 07/10/2019
+*/
+
+/**
+*	@brief Contains any enum related to rendering process.
+*/
+struct RendEnum
+{
+	/// [Geometry and topology]
+
+	// Topology types
+	enum IBOTypes: uint8_t
+	{
+		IBO_POINT_CLOUD,
+		IBO_WIREFRAME,
+		IBO_TRIANGLE_MESH
+	};
+
+	// Geometry types
+	enum VBOTypes : uint8_t
+	{
+		VBO_POSITION,
+		VBO_NORMAL,
+		VBO_TEXT_COORD,
+		VBO_TANGENT,
+		VBO_OFFSET,
+		VBO_SCALE,
+		VBO_ROTATION,
+		VBO_COLOR_TEXT_COORD_X,
+		VBO_RETURN_NUMBER,
+		VBO_RETURN_DIVISION,
+		VBO_INTENSITY,
+		VBO_SCAN_ANGLE_RANK,
+		VBO_SCAN_ANGLE_DIRECTION,
+		VBO_GPS_TIME
+	};
+
+	/**
+	*	@return Number of VBO different types.
+	*/
+	const static GLsizei numIBOTypes() { return IBO_TRIANGLE_MESH + 1; }
+
+	/**
+	*	@return Number of VBO different types.
+	*/
+	const static GLsizei numVBOTypes() { return VBO_GPS_TIME + 1; }
+
+	/// [Shaders]
+
+	// Shader implementations
+	enum RendShaderTypes : uint8_t
+	{
+		// General
+		WIREFRAME_SHADER,
+		REFLECTIVE_TRIANGLE_MESH_SHADER,
+		TRIANGLE_MESH_SHADER,
+		TRIANGLE_MESH_GROUP_SHADER,
+		TRIANGLE_MESH_NORMAL_SHADER,
+		TRIANGLE_MESH_POSITION_SHADER,
+		SHADOWS_SHADER,
+
+		// Geometry
+		GEOMETRY_CONE_SHADER,
+		GEOMETRY_RANGE_SHADER,
+		
+		// Terrain
+		GRASS_SHADER,
+		TERRAIN_REGULAR_GRID_SHADER,
+		TREE_TRIANGLE_MESH_SHADER,
+		TERRAIN_SHADER,
+		WATER_LAKE_SHADER,
+
+		// LiDAR Point cloud
+		INTENSITY_POINT_CLOUD_SHADER,
+		POINT_CLOUD_SHADER,
+		POINT_CLOUD_COLOUR_SHADER,
+		POINT_CLOUD_GRAYSCALE_HEIGHT_SHADER,
+		POINT_CLOUD_HEIGHT_SHADER,
+		POINT_CLOUD_NORMAL_SHADER,
+		POINT_CLOUD_RETURN_NUMBER_SHADER,
+		POINT_CLOUD_SCAN_ANGLE_RANK_SHADER,
+		POINT_CLOUD_SCAN_DIRECTION_SHADER,
+		POINT_CLOUD_GPS_TIME_SHADER,
+
+		// Instance rendering
+		MULTI_INSTANCE_TRIANGLE_MESH_POSITION_SHADER,
+		MULTI_INSTANCE_TRIANGLE_MESH_NORMAL_SHADER,
+		MULTI_INSTANCE_TRIANGLE_MESH_GROUP_SHADER,
+		MULTI_INSTANCE_SHADOWS_SHADER,
+
+		// Data structures
+		BVH_SHADER,
+
+		// SSAO
+		BLUR_SSAO_SHADER,
+		SSAO_SHADER,
+
+		// Debug quad
+		DEBUG_QUAD_SHADER,
+
+		// Filters
+		BLUR_SHADER,
+		NORMAL_MAP_SHADER
+	};
+
+	enum CompShaderTypes : uint8_t
+	{
+		// BVH
+		BUILD_CLUSTER_BUFFER,
+		CLUSTER_MERGING,
+		COMPUTE_FACE_AABB,
+		COMPUTE_GROUP_AABB,
+		COMPUTE_MORTON_CODES,
+		DOWN_SWEEP_PREFIX_SCAN,
+		FIND_BEST_NEIGHBOR,
+		REALLOCATE_CLUSTERS,
+		REDUCE_PREFIX_SCAN,
+		RESET_LAST_POSITION_PREFIX_SCAN,
+
+		// Radix sort
+		BIT_MASK_RADIX_SORT,
+		END_LOOP_COMPUTATIONS,
+		REALLOCATE_RADIX_SORT,
+		RESET_BUFFER_INDEX,
+
+		// Terrain
+		COMPUTE_BUILDING_POSITION,
+		COMPUTE_TERRAIN_NORMALS,
+		COMPUTE_TREE_PROPERTIES,
+		ERODE_TERRAIN,
+		GENERATE_TREE_GEOMETRY_TOPOLOGY,
+		GENERATE_VEGETATION,
+		GENERATE_VEGETATION_MAP,
+		TERRAIN_FACES_TOPOLOGY,
+		TERRAIN_GEOMETRY_TOPOLOGY,
+
+		// Animation
+		COMPUTE_BEZIER_CURVE,
+
+		// Model
+		COMPUTE_TANGENTS_1,
+		COMPUTE_TANGENTS_2,
+		MODEL_APPLY_MODEL_MATRIX,
+		MODEL_MESH_GENERATION,
+		PLANAR_SURFACE_GENERATION,
+		PLANAR_SURFACE_TOPOLOGY,
+		RETRIEVE_COLORS,
+
+		// LiDAR 
+		ADD_OUTLIER_SHADER,
+		COMPUTE_POINT_COLOR,
+		FIND_BVH_COLLISION,
+		PREPARE_LIDAR_DATA,
+		RAY_GEOMETRY_INTERSECTION,
+		REDUCE_COLLISIONS,
+		RESET_LIDAR_DATA,
+		UPDATE_COLLISION_RETURNS,
+		UPDATE_LIDAR_DATA,
+
+		// LiDAR Instancing
+		AERIAL_LINEAR_ZIGZAG_LIDAR,
+		AERIAL_ELLIPTICAL_LIDAR,
+		TERRESTRIAL_SPHERICAL_LIDAR
+	};
+
+	/**
+	*	@return Number of compute shaders.
+	*/
+	const static GLsizei numComputeShaderTypes() { return TERRESTRIAL_SPHERICAL_LIDAR + 1; }
+
+	/**
+	*	@return Number of rendering shaders.
+	*/
+	const static GLsizei numRenderingShaderTypes() { return NORMAL_MAP_SHADER + 1; }
+
+	/// [Rendering parameters]
+
+	// Matrices types
+	enum MatricesTypes : uint8_t
+	{
+		MODEL_MATRIX,
+		VIEW_MATRIX,
+		PROJ_MATRIX,
+		VIEW_PROJ_MATRIX,
+		BIAS_VIEW_PROJ_MATRIX
+	};
+
+	/**
+	*	@return Number of rendering shaders.
+	*/
+	const static GLsizei numMatricesTypes() { return BIAS_VIEW_PROJ_MATRIX + 1; }
+};

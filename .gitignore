@@ -1,3 +1,22 @@
+# Assets
+*.obj
+*.mtl
+*.bin
+*.binary
+*.ply
+*.png
+*.jpg
+*.jpeg
+*.tif
+*.tiff
+*.bsdf
+*.out
+*.zip
+*.bsdf
+LiDAR_BRDF/Assets/Scene/*
+LiDAR_BRDF/Assets/BRDF/*
+LiDAR_BRDF/Settings/
+
 # Prerequisites
 *.d
 
@@ -5,7 +24,6 @@
 *.slo
 *.lo
 *.o
-*.obj
 
 # Precompiled Headers
 *.gch
@@ -30,3 +48,8 @@
 *.exe
 *.out
 *.app
+
+# Visual Studio	
+.vs/*
+x64/*
+LiDAR_BRDF/x64/*
